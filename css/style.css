@@ -181,6 +181,7 @@ body {
 /* Start Wrapper */
 .wrapper {
   margin-left: 200px;
+  overflow-x: hidden;
 }
 
 /* Start Wrapper Head */
