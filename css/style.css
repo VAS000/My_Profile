@@ -181,11 +181,12 @@ body {
 /* Start Wrapper */
 .wrapper {
   margin-left: 200px;
+  overflow-x: hidden;
 }
 
 /* Start Wrapper Head */
 .wrapper .head {
-    background-color: #E74C3C;
+    background-color: #2C3E50;
     text-align: center;
     position: fixed;
     width: calc(100% - 200px);
@@ -467,7 +468,7 @@ body {
 
 /* Start Footer */
 .footer {
-    background-color: #E74C3C;
+    background-color: #2C3E50;
     text-align: center;
     width: calc(100% - 200px);
     position: fixed;
