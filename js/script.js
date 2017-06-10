@@ -42,7 +42,6 @@ $(function(){
         if(data == 'skills'){
             progressBarAnimation();
         }
-        $('.toggleMenu').click();
     });
 
     // Animate Wrapper After Clicking On Toggle Button 
