@@ -328,6 +328,7 @@ body {
 }
 .education .box h4 {
     font-size: 20px;
+    font-weight: bold;
 }
 .education .box p {
   margin: 15px 0;
@@ -490,13 +491,38 @@ body {
 
 /* Start Media Query */
 
+@media(max-width: 160px){
+  .work .mix .content a{
+      max-width: 100%;
+      border-right: none !important;
+      border-left: none !important;
+  }
+}
+@media (max-width: 250px){
+    .work .mix .content h4 {
+      display: none;
+    }
+    .work .mix .content a {
+      margin-top: 10px !important;
+      padding: 0 !important;
+      font-size: 13px;
+    }
+    
+    /*
+    .work .mix .content{
+      display: none !important;
+    }
+    */
+}
 @media (max-width: 400px){
     .work .mix {
       width: 100%;
     }
+    /*
     .work .mix .content{
       display: none !important;
     }
+    */
 }
 @media(max-width: 500px){
   .education .box .year {
@@ -507,8 +533,11 @@ body {
     clip-path: none;
   }
   .education .timeline {
-      width: 75%;
-    }
+    width: 75%;
+  }
+  .education .box {
+    margin-top: 20px;
+  }
 }
 @media (max-width: 650px){
     .wrapper .head h1{
@@ -567,7 +596,7 @@ body {
     }
     /* Work Section */
     .work .mix .content {
-      padding-top: calc(100% / 5);
+      padding-top: calc(100% / 4);
     }
     .work .mix .content h4{
       font-size: 17px;
@@ -588,6 +617,7 @@ body {
     }
 }
 
+
 @media(max-height: 500px){
   .slidebar .head {
     padding: 0;
@@ -595,7 +625,6 @@ body {
   .slidebar .img-div{
     display: none;
   }
-
 }
 
 /* End Media Query */

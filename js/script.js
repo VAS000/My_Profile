@@ -126,10 +126,11 @@ $(function(){
 
 
     // Send AJAX Request 
-
     
     $('#submit').on('click', function(e){
-        e.preventDefault(); 
+        e.preventDefault();
+        showMessage('form .message', 'error', 'Form Submition Is Disabled', 600, 2000);
+        /*
         $('.contact form .error_field').css('display', 'none');
         var formData = $(this).closest('form').serialize();
         $.ajax({
@@ -170,14 +171,35 @@ $(function(){
                     }
                 }
             },
-            fail: function(){
-                showMessage('form .message', 'error', 'Sorry. Error while trying to send you message!', 600, 2000);
+            error: function (r, e) { // (Request, Error)
+                var m;
+                if (r.status === 0) {
+                    m = 'Error: Connection Error';
+                } else if (r.status == 404) {
+                    m = 'Error: Page Not Found';
+                } else if (r.status == 500) {
+                    m = 'Error: Internal Server Error';
+                } else if (exception === 'parsererror') {
+                    m = 'Error: Request Parse Error';
+                } else if (exception === 'timeout') {
+                    m = 'Erro: Request Time Out';
+                } else if (exception === 'abort') {
+                    m = 'Error: Request Terminated!';
+                } else {
+                    m = 'Error: Undefined Error Accured';
+                }
+                showMessage('form .message', 'error', m, 600, 2000);
                 $('.contact form .loader').hide(500);
             },
+            //fail: function(){
+            //    showMessage('form .message', 'error', 'Sorry. Error while trying to send you message!', 600, 2000);
+            //    $('.contact form .loader').hide(500);
+            //},
             beforeSend: function() { 
                 $('.contact form .loader').show(500);
             }
         });
+        */
     });
 
     // Function To Show Specific Message Based On The Parameters
@@ -207,5 +229,9 @@ $(function(){
         $(this).find('h4').css('color', '#'+$(this).data('color'));
         $(this).find('a').css('border-color', '#'+$(this).data('color'));
     });
+
+    // Testing/Debugging
+
+    $('.captcha').hide();
 
 });

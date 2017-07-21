@@ -60,7 +60,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
         $errors['captcha']['empty'] = 'Captcha Should Be Solved';
      }else{
         $url = 'https://www.google.com/recaptcha/api/siteverify?secret=';
-        $secret = '6LdJUCQUAAAAANJ-A9Ty12tye4Hjl-cWtR0t7q3D';
+        $secret = '6LdJUCQUAAAAANJ-A9Ty12tye4Hjl-cWtR0t7q3D'; // Change it later 
         $response = json_decode(file_get_contents($url.$secret."&response=".$captcha."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
         if ($response["success"] == false) {
             $errors['captcha']['wrong'] = 'The Captcha Is Incorrect';
